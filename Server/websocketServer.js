@@ -24,7 +24,7 @@ const httpServer = net.createServer(connection => {
         <input id="username" value="Anonym"/>
         <p>Her kan du skrive inn en melding: </p>
         <input id="inputMessage" />
-        <button type="button" onclick="send()">Send</button>
+        <button type="button" onclick="send()">Send</button></br>
         <br/>
     </div>
     <div id="message-board" align="center">
@@ -42,7 +42,7 @@ const httpServer = net.createServer(connection => {
           let jsonMessage = {
               "username": username,
               "message":message
-          }
+          };
           
           messages += username + ": " + message+ "</br>";
           document.getElementById("message").innerHTML = messages;
