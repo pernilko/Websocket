@@ -1,0 +1,21 @@
+{
+  "name": "o7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Server/websocketServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Pernille",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.2",
+    "react-simplified": "^2.0.0",
+    "ws": "^7.0.0"
+  },
+  "devDependencies": {
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2"
+  }
+}
