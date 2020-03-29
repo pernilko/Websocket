@@ -2,7 +2,7 @@
 
 const net = require('net');
 
-//https://tools.ietf.org/html/rfc6455#section-10.8
+//https://tools.ietf.org/html/rfc6455#section-10.8 -- documentation
 // Simple HTTP server responds with a simple WebSocket client test
 const httpServer = net.createServer(connection => {
     connection.on('data', () => {
@@ -71,7 +71,7 @@ httpServer.listen(3000, () => {
 const Createhandshake = (data) => {
     let globallyUniqueIdentifier = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
 
-    //Finding sec key from header
+    //Finding sec key from header (line number 12)
     let response = data.toString().split("\n");
     let line = response[12].split(" ");
     console.log(line);
@@ -82,7 +82,7 @@ const Createhandshake = (data) => {
     let sec = secKey + globallyUniqueIdentifier;
     console.log(sec);
 
-    //hashing sec and creating handshake
+    //hashing sec with SHA1, and creating handshake
     let hash = require("crypto").createHash("SHA1").update(sec).digest("base64");
     let handshake = "HTTP/1.1 101 Switching Protocols\r\n" + "Upgrade: websocket\r\n" + "Connection: Upgrade\r\n" + "Sec-WebSocket-Accept: " + hash + "\r\n" + "\r\n";
     return handshake;
