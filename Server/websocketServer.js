@@ -21,6 +21,7 @@ const httpServer = net.createServer(connection => {
         <p>Her kan du skrive inn en melding: </p>
         <input id="inputMessage"/>
         <button type="button" onclick="send()">Send</button>
+        <br/>
     </div>
     <div id="message-board" align="center">
     <h3>Message board: </h3>
@@ -69,13 +70,19 @@ httpServer.listen(3000, () => {
 
 const Createhandshake = (data) => {
     let globallyUniqueIdentifier = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
+
+    //Finding sec key from header
     let response = data.toString().split("\n");
     let line = response[12].split(" ");
     console.log(line);
     let secKey = line[1].slice(0,-1);
     console.log(secKey);
+
+    //Combining sec key with globally unique identifier
     let sec = secKey + globallyUniqueIdentifier;
     console.log(sec);
+
+    //hashing sec and creating handshake
     let hash = require("crypto").createHash("SHA1").update(sec).digest("base64");
     let handshake = "HTTP/1.1 101 Switching Protocols\r\n" + "Upgrade: websocket\r\n" + "Connection: Upgrade\r\n" + "Sec-WebSocket-Accept: " + hash + "\r\n" + "\r\n";
     return handshake;
