@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c61e9b04-df6f-4f9f-8799-d09ebb8d67ab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/websocketServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/websocketServer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +16,7 @@
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="package.json" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -35,6 +37,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Høst/Systemutvikling 2/SysUtv_Ø3" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
@@ -87,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585343866292</updated>
       <workItem from="1585343871802" duration="1480000" />
-      <workItem from="1585355157055" duration="15699000" />
+      <workItem from="1585355157055" duration="16974000" />
     </task>
     <servers />
   </component>

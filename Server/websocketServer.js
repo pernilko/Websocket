@@ -10,16 +10,20 @@ const httpServer = net.createServer(connection => {
 <html>
   <head>
     <meta charset="UTF-8" />
+    <style>
+    h1 {background-color: powderblue}
+</style>
   </head>
   <body>
+ 
     <div align="center">
         <h1>Websocket øving :)</h1>
     </div>
     <div align="center">
         <p>Skriv inn brukernavn: </p>
-        <input id="username"/>
+        <input id="username" value="Anonym"/>
         <p>Her kan du skrive inn en melding: </p>
-        <input id="inputMessage"/>
+        <input id="inputMessage" />
         <button type="button" onclick="send()">Send</button>
         <br/>
     </div>
