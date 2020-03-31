@@ -11,8 +11,8 @@ const httpServer = net.createServer(connection => {
   <head>
     <meta charset="UTF-8" />
     <style>
-    h1 {background-color: powderblue}
-</style>
+     h1 {background-color: powderblue}
+    </style>
   </head>
   <body>
  
@@ -26,6 +26,7 @@ const httpServer = net.createServer(connection => {
         <input id="inputMessage" />
         <button type="button" onclick="send()">Send</button></br>
         <br/>
+        <canvas hidden="true"></canvas>
     </div>
     <div id="message-board" align="center">
     <h3>Message board: </h3>
@@ -53,11 +54,9 @@ const httpServer = net.createServer(connection => {
       
       ws.onmessage = event => {
           let jsonMessage = JSON.parse(event.data);
-          let message = jsonMessage["message"];
-          let username = jsonMessage["username"];
-          let messageElement = username + ": " + message + "</br>";
+          let messageElement = jsonMessage["username"] + ": " + jsonMessage["message"] + "</br>";
         
-         messages +=messageElement;
+         messages += messageElement;
          document.getElementById("message").innerHTML=messages; 
          alert('Message from server: ' + event.data);
       };
@@ -71,6 +70,27 @@ const httpServer = net.createServer(connection => {
 httpServer.listen(3000, () => {
     console.log('HTTP server listening on port 3000');
 });
+
+function dec2hexString(dec) {
+    return "0x" + (dec+0x10000).toString(16).substr(-4).toUpperCase();
+}
+
+const clients = new Set();
+
+const makeMessage = (message) => {
+    let buffer_1 = new Buffer([0x81]);
+    let buffer_2 = new Buffer([dec2hexString(message.length)]);
+    let buffer_3 = Buffer.from(message);
+    return Buffer.concat([buffer_1,buffer_2,buffer_3]);
+};
+
+clients.brodcast = function (data, e) {
+    for(let socket of this){
+        if(socket !== e){
+            socket.write(makeMessage(data));
+        }
+    }
+};
 
 const Createhandshake = (data) => {
     let globallyUniqueIdentifier = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
@@ -90,27 +110,6 @@ const Createhandshake = (data) => {
     let hash = require("crypto").createHash("SHA1").update(sec).digest("base64");
     let handshake = "HTTP/1.1 101 Switching Protocols\r\n" + "Upgrade: websocket\r\n" + "Connection: Upgrade\r\n" + "Sec-WebSocket-Accept: " + hash + "\r\n" + "\r\n";
     return handshake;
-};
-
-function dec2hexString(dec) {
-    return "0x" + (dec+0x10000).toString(16).substr(-4).toUpperCase();
-}
-
-const clients = new Set();
-
-const makeMessage = (message) => {
-    let buffer_1 = new Buffer([0x81]);
-    let buffer_2 = new Buffer([dec2hexString(message.length)]);
-    let buffer_3 = Buffer.from(message);
-    return Buffer.concat([buffer_1,buffer_2,buffer_3]);
-};
-
-clients.brodcast = function (data, except) {
-    for(let socket of this){
-        if(socket !== except){
-            socket.write(makeMessage(data));
-        }
-    }
 };
 
 // Incomplete WebSocket server
@@ -138,8 +137,8 @@ const wsServer = net.createServer(connection => {
     });
 
     connection.on('end', () => {
-        console.log('Client disconnected');
         clients.delete(connection);
+        console.log('Client disconnected');
     });
 });
 wsServer.on('error', error => {

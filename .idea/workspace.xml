@@ -36,7 +36,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Høst/Systemutvikling 2/SysUtv_Ø3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -90,7 +90,9 @@
       <option name="presentableId" value="Default" />
       <updated>1585343866292</updated>
       <workItem from="1585343871802" duration="1480000" />
-      <workItem from="1585355157055" duration="18567000" />
+      <workItem from="1585355157055" duration="19535000" />
+      <workItem from="1585526925143" duration="831000" />
+      <workItem from="1585612223046" duration="1390000" />
     </task>
     <servers />
   </component>
@@ -98,10 +100,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="172" y="173" key="FileChooserDialogImpl" timestamp="1585359458017">
+    <state x="172" y="173" key="FileChooserDialogImpl" timestamp="1585529978557">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="172" y="173" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1585359458017" />
+    <state x="172" y="173" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1585529978557" />
     <state width="725" height="245" key="GridCell.Tab.0.bottom" timestamp="1585357246431">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -122,9 +124,13 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="349" y="161" key="IDE.errors.dialog/0.0.1536.834@0.0.1536.834" timestamp="1585513880196" />
-    <state x="88" y="243" key="com.intellij.ide.util.TipDialog" timestamp="1585355161856">
+    <state x="88" y="243" key="com.intellij.ide.util.TipDialog" timestamp="1585526926110">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="88" y="243" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1585355161856" />
+    <state x="88" y="243" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1585526926110" />
+    <state x="180" y="143" key="new project wizard" timestamp="1585529984555">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="180" y="143" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1585529984555" />
   </component>
 </project>
